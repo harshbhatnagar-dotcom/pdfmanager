@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} Compress PDF {% endblock %}
+
+{% block content %}
+
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">PDF Manager</h1>
+
+    <div class="row justify-content-center">
+        <!-- Merge PDF Card Centered -->
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title">Compress PDF</h5>
+                    <form method="post" action="/compress" enctype="multipart/form-data" target="_blank">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="pdf" class="form-label">Select PDF File</label>
+                            <input type="file" class="form-control" name="pdf" id="pdf" required
+                                accept="application/pdf">
+                        </div>
+                        {% if user.is_authenticated %}
+                        <button type="submit" class="btn btn-primary w-100">Compress</button>
+                        {% else %}
+                        <p>Please Login to continue</p>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+{% endblock %}

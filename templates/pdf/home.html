@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block homeactive %} active {% endblock %}
+
+{% block content %}
+
+<div class="container my-5">
+
+    <!-- ✅ Hero Section -->
+    <div class="bg-primary text-white text-center p-5 rounded-4 shadow mb-5">
+        <h1 class="display-4 fw-bold">Welcome to PDF Manager</h1>
+        <p class="lead">Fast, free & secure tools to manage your PDF files.</p>
+        <a href="#services" class="btn btn-light btn-lg mt-3">Explore Tools</a>
+    </div>
+
+    <!-- ✅ Services Section -->
+    <div id="services">
+        <h2 class="text-center mb-4">Our PDF Tools</h2>
+        <div class="row g-4 justify-content-center">
+
+            <!-- Merge PDFs -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Merge PDFs</h5>
+                        <p class="card-text">Combine multiple PDFs into one document.</p>
+                        <a href="/merger/" class="btn btn-outline-primary w-100">Try Merge</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Split PDFs -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Split PDF</h5>
+                        <p class="card-text">Extract specific pages from a PDF file.</p>
+                        <a href="/split" class="btn btn-outline-primary w-100">Try Split</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compress PDFs -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Compress PDF</h5>
+                        <p class="card-text">Reduce file size without losing quality.</p>
+                        <a href="/compress" class="btn btn-outline-primary w-100">Try Compress</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text to PDF -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">WaterMark</h5>
+                        <p class="card-text">Convert plain text files into PDF format.</p>
+                        <a href="/watermark" class="btn btn-outline-primary w-100">Try Adding WaterMark</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF to Text -->
+            
+
+        </div>
+    </div>
+</div>
+{% endblock %}

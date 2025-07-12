@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %} Pdf Merger {% endblock %}
+
+
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">PDF Manager</h1>
+
+    <div class="row justify-content-center">
+        <!-- Merge PDF Card Centered -->
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Merge PDFs</h5>
+                    <form action="/merger/" method="post" enctype="multipart/form-data" target="_blank" >
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="file" class="form-control" name="pdfs" id="pdfInput" accept="application/pdf"
+                                multiple required onchange="showSelectedFiles()">
+                            <ul id="fileList" class="mt-2 small text-muted ps-3"></ul>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <button type="submit" class="btn btn-primary w-100">Merge</button>
+                        {% else %}
+                        <p>Please Login to continue</p>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+   
+</div>
+
+
+
+<script>
+    function showSelectedFiles() {
+        const input = document.getElementById("pdfInput");
+        const list = document.getElementById("fileList");
+        list.innerHTML = "";
+        for (const file of input.files) {
+            const li = document.createElement("li");
+            li.textContent = file.name;
+            list.appendChild(li);
+        }
+    }
+</script>
+
+
+
+{% endblock %}

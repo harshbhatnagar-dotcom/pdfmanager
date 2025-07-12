@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} Split Pdf {% endblock %}
+
+{% block content %} 
+
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">PDF Manager</h1>
+
+    <div class="row justify-content-center">
+        <!-- Merge PDF Card Centered -->
+        <div class="col-md-6">
+            <div class="card shadow rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title">Split PDF</h5>
+                    <form action="/split" method="post" enctype="multipart/form-data" target="_blank">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="file" class="form-control mb-2" name="pdf" required>
+                            <input type="number" class="form-control mb-2" name="start" placeholder="Start Page" required>
+                            <input type="number" class="form-control mb-2" name="end" placeholder="End Page" required>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <button type="submit" class="btn btn-warning w-100">Split</button>
+                        {% else %}
+                        <p>Please Login to continue</p>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+   
+   
+</div>
+
+{% endblock %}
