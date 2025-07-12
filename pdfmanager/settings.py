@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&-3tzq*4u51j!^0j25h6(uzpr_*yfs6q*)er@$fj@o$xzj^2sh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["pdfmanager-r6ck.onrender.com"]
 
 
 # Application definition
